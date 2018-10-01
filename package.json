@@ -1,0 +1,33 @@
+{
+  "name": "jsclass-event",
+  "version": "0.1.0",
+  "description": "Tiny & easy to use event driven frame work.  Works both on server-side and client-side",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kojiy7214/jsclass-event.git"
+  },
+  "keywords": [
+    "ES6",
+    "Event",
+    "Driven",
+    "FrameWork"
+  ],
+  "author": "Koji Yamashita <koji7214@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kojiy7214/jsclass-event/issues"
+  },
+  "homepage": "https://github.com/kojiy7214/jsclass-event#readme",
+  "devDependencies": {
+    "documentation": "^8.1.2",
+    "jsclass-mixin": "^0.1.1",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "socket.io": "^2.1.1"
+  }
+}
