@@ -2,13 +2,19 @@
 Tiny &amp; easy to use event driven frame work.  
 
 ## What Makes "jsclass-event" Unique
-With less than 50 lines of code, "jsclass-event" provides basic event driven
+With tiny lines of code, "jsclass-event" provides basic event driven
 features.  Further more it is easy to use, and produces very clean code.
 
 ## How to Use
 ### Making Your Object Event Aware
 There are two ways.  First is to extend your class based on "jsclass-event",
 Alternative is to attach objects to "jsclass-event" afterwards.
+### Attaching Objects ONLY for Receiving Events
+When you attach your object to "jsclass-event", dispatch() method and
+dispatchTo() method will be automatically added to your object.  This may
+result in overwriting your existing method with same names.
+If you want to attach your object as a message "receiver" and not a "sender",
+use attachReceiver() method instead.
 
 ```
 const EventAware = require("jsclass-event");
@@ -20,7 +26,10 @@ class B{
 };
 
 let b = new B();
-EventAware.attach(b); // object b is event-aware
+EventAware.attach(b); // object b is event-aware; b can send/receive event
+
+let c = new C();
+EventAware.attachAsReceiver(c) // object c is event-receiver; c can receive event, but not sending one
 
 EventAware.detach(b); // you can also detach to make object non-event-aware
 ```

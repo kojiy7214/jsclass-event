@@ -99,7 +99,7 @@ describe('Basic Event Test', function() {
     })
   })
 
-  describe('atach object', function() {
+  describe('atach/detach object', function() {
     it('#atach()', function() {
       let a = new A();
       let d = new D();
@@ -125,6 +125,34 @@ describe('Basic Event Test', function() {
       d.dispatch("event", "test2")
       assert.equal(b1.data, "test2");
       assert.equal(b2.data, "test2");
+    })
+
+    it('#atachAsReceiver()', function() {
+      let a = new A();
+      let d = new class extends D {
+        dispatchTo() {
+          return "original";
+        }
+        dispatch() {
+          return "original";
+        }
+      }();
+
+      a.dispatch("event", "test");
+      assert.equal(d.data, undefined);
+
+      EventAware.attachAsReceiver(d);
+
+      a.dispatch("event", "test");
+      assert.equal(d.data, "test");
+
+      assert.equal(d.dispatch(), "original");
+      assert.equal(d.dispatchTo(), "original");
+
+      EventAware.detach(d);
+
+      a.dispatch("event", "test2");
+      assert.equal(d.data, "test");
     })
   })
 
