@@ -1,6 +1,6 @@
 {
   "name": "jsclass-event",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tiny & easy to use event driven frame work.  Works both on server-side and client-side",
   "main": "index.js",
   "scripts": {
