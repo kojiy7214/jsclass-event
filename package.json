@@ -23,11 +23,8 @@
   },
   "homepage": "https://github.com/kojiy7214/jsclass-event#readme",
   "devDependencies": {
-    "documentation": "^8.1.2",
     "jsclass-mixin": "^0.1.1",
     "mocha": "^5.2.0"
   },
-  "dependencies": {
-    "socket.io": "^2.1.1"
-  }
+  "dependencies": {}
 }
