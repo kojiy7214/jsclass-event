@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kojiy7214/jsclass-event.svg?branch=master)](https://travis-ci.org/kojiy7214/jsclass-event)
+
 # jsclass-event
 Tiny &amp; easy to use event driven frame work.  
 
